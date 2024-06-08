@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue color */
+        }
+        form {
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .result p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745; /* Green color */
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form action="/" method="post">
+            <textarea name="text" rows="4" cols="50" placeholder="Enter text for sentiment analysis..."></textarea><br>
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if sentiment %}
+            <div class="result">
+                <h2>Sentiment Analysis Result</h2>
+                <p>The sentiment of the text is: <span style="color: #dc3545;">{{ sentiment }}</span></p> <!-- Red color -->
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        Made by Jenil Pancholi | Student ID: N01665133
+    </footer>
+</body>
+</html>
